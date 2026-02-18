@@ -31,6 +31,7 @@ public class TarefaService {
             tarefaExistente.setNome(tarefa.getNome());
             tarefaExistente.setData(tarefa.getData());
             tarefaExistente.setPrioridade(tarefa.getPrioridade());
+            tarefaExistente.setAutor(tarefa.getAutor());
             return tarefaRepository.save(tarefaExistente);
         }).orElseThrow(() -> new RuntimeException("Tarefa não encontrada com o id: " + id));
     }

@@ -16,6 +16,9 @@ public class Tarefa {
     private String nome;
     private Date data;
     private String prioridade;
+    @ManyToOne
+    @JoinColumn(name = "autor_id")
+    private Usuario autor;
 
     public UUID getId() {
         return id;
@@ -47,5 +50,13 @@ public class Tarefa {
 
     public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
+    }
+
+    public Usuario getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Usuario autor) {
+        this.autor = autor;
     }
 }
